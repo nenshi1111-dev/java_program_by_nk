@@ -1,0 +1,112 @@
+
+file 1 person .java
+package mypackage;
+
+public class Person {
+
+    // Attributes with different access specifiers
+    public String name;        // accessible everywhere
+    private int age;           // accessible only inside Person class
+    protected String city;     // accessible in same package + subclasses
+    String country;            // default access: accessible in same package only
+
+    // Constructor
+    public Person(String name, int age, String city, String country) {
+        this.name = name;
+        this.age = age;
+        this.city = city;
+        this.country = country;
+    }
+
+    // Method to display private age (because age is private)
+    public void showAge() {
+        System.out.println("Age: " + age);
+    }
+
+    // Method to display other details
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("Country: " + country);
+        showAge();
+    }
+}
+
+
+
+file2:samepackegedemo.java
+package mypackage;
+
+public class SamePackageDemo {
+    public static void main(String[] args) {
+        Person p = new Person("Alice", 25, "Ahmedabad", "India");
+
+        // Accessing members from same package
+        System.out.println("Access from same package:");
+        System.out.println("Public Name: " + p.name);       // accessible
+        // System.out.println(p.age); // ❌ Not accessible (private)
+        System.out.println("Protected City: " + p.city);   // accessible
+        System.out.println("Default Country: " + p.country); // accessible
+        p.showAge(); // accessible via public method
+    }
+}
+
+
+file3:different packegedemo.java
+package otherpackage;
+
+import mypackage.Person;
+
+public class DifferentPackageDemo {
+    public static void main(String[] args) {
+        Person p = new Person("Bob", 30, "Mumbai", "India");
+
+        System.out.println("Access from different package:");
+
+        System.out.println("Public Name: " + p.name);  // accessible
+        // System.out.println(p.city);    ❌ Not accessible (protected, outside package)
+        // System.out.println(p.country); ❌ Not accessible (default)
+        // System.out.println(p.age);     ❌ Not accessible (private)
+
+        p.showAge();  // accessible via public method
+    }
+}
+
+🧠 Accessibility Summary
+Subclass (other package)
+Modifier
+Same Class
+Same Package
+Other Package
+public
+Yes
+Yes
+Yes
+Yes
+private
+Yes
+No
+No
+No
+protected
+Yes
+Yes
+Yes
+No
+default
+Yes
+Yes
+No
+No
+
+
+project/
+ └─ mypackage/
+      ├─ Person.java
+      └─ SamePackageDemo.java
+
+javac mypackage/Person.java
+
+javac mypackage/SamePackageDemo.java
+
+java mypackage.SamePackageDemo
