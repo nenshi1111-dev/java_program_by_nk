@@ -1,0 +1,26 @@
+public class MathDemo {
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = -20;
+
+        // max and min
+        System.out.println("Maximum of a and b: " + Math.max(a, b));
+        System.out.println("Minimum of a and b: " + Math.min(a, b));
+
+        // square root
+        System.out.println("Square root of 25: " + Math.sqrt(25));
+
+        // absolute value
+        System.out.println("Absolute value of b: " + Math.abs(b));
+
+        // power
+        System.out.println("2 power 3: " + Math.pow(2, 3));
+
+        // rounding methods
+        double x = 4.6;
+        System.out.println("Round of 4.6: " + Math.round(x));
+        System.out.println("Ceil of 4.6: " + Math.ceil(x));
+        System.out.println("Floor of 4.6: " + Math.floor(x));
+    }
+}
