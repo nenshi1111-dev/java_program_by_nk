@@ -1,0 +1,26 @@
+public class StringDemo {
+    public static void main(String[] args) {
+
+        String s1 = "Hello";
+        String s2 = "World";
+
+        // 1. Concatenation
+        String s3 = s1 + " " + s2;
+        System.out.println("Concatenation: " + s3);
+
+        // 2. Length
+        System.out.println("Length of s3: " + s3.length());
+
+        // 3. Comparison
+        String s4 = "Hello";
+        System.out.println("s1 equals s4: " + s1.equals(s4));
+        System.out.println("s1 equals s2: " + s1.equals(s2));
+
+        // 4. Substring check
+        System.out.println("Contains 'World': " + s3.contains("World"));
+
+        // 5. Uppercase and Lowercase
+        System.out.println("Uppercase: " + s3.toUpperCase());
+        System.out.println("Lowercase: " + s3.toLowerCase());
+    }
+}
