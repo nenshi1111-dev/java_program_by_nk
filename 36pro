@@ -1,0 +1,31 @@
+// Outer class
+class Outer {
+
+    // Method of outer class
+    void showOuter() {
+        System.out.println("This is Outer class method");
+    }
+
+    // Inner class
+    class Inner {
+
+        // Method of inner class
+        void showInner() {
+            System.out.println("This is Inner class method");
+        }
+    }
+}
+
+// Main class
+public class InnerClassDemo {
+    public static void main(String[] args) {
+
+        // Create Outer class object
+        Outer outer = new Outer();
+        outer.showOuter();
+
+        // Create Inner class object using Outer object
+        Outer.Inner inner = outer.new Inner();
+        inner.showInner();
+    }
+}
