@@ -1,0 +1,34 @@
+class Counter {
+
+    // Static variable (shared by all objects)
+    static int count = 0;
+
+    // Non-static variable (unique for each object)
+    int number;
+
+    // Constructor
+    Counter(int n) {
+        number = n;
+        count++;   // increment static variable
+    }
+
+    // Method to display values
+    void display() {
+        System.out.println("Number = " + number);
+        System.out.println("Count  = " + count);
+        System.out.println();
+    }
+
+    // Main method
+    public static void main(String[] args) {
+
+        Counter c1 = new Counter(10);
+        c1.display();
+
+        Counter c2 = new Counter(20);
+        c2.display();
+
+        Counter c3 = new Counter(30);
+        c3.display();
+    }
+}
