@@ -1,0 +1,30 @@
+// Level 1: Parent class
+class Animal {
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Level 2: Child of Animal
+class Mammal extends Animal {
+    public void walk() {
+        System.out.println("Mammal is walking");
+    }
+}
+
+// Level 3: Child of Mammal
+public class Dog extends Mammal {
+    public void bark() {
+        System.out.println("Dog is barking");
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        Dog d = new Dog();
+
+        // Call methods from all levels
+        d.eat();   // inherited from Animal
+        d.walk();  // inherited from Mammal
+        d.bark();  // own method
+    }
+}
