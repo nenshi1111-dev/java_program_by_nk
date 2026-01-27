@@ -1,0 +1,33 @@
+import java.util.Random;
+
+public class RandomDemo {
+    public static void main(String[] args) {
+
+        Random r = new Random();
+
+        // Generate random values
+        int randomInt = r.nextInt(100);     // 0 to 99
+        float randomFloat = r.nextFloat();  // 0.0 to 1.0
+        boolean randomBool = r.nextBoolean();
+
+        // Display random values
+        System.out.println("Random Integer: " + randomInt);
+        System.out.println("Random Float: " + randomFloat);
+        System.out.println("Random Boolean: " + randomBool);
+
+        // Using random integer in calculation
+        int square = randomInt * randomInt;
+        System.out.println("Square of Random Integer: " + square);
+
+        // Using random float in calculation
+        float half = randomFloat / 2;
+        System.out.println("Half of Random Float: " + half);
+
+        // Using random boolean in event (decision)
+        if (randomBool) {
+            System.out.println("Event: Light is ON");
+        } else {
+            System.out.println("Event: Light is OFF");
+        }
+    }
+}
