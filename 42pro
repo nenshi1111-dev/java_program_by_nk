@@ -1,0 +1,22 @@
+public class StringBufferDemo {
+    public static void main(String[] args) {
+
+        StringBuffer sb = new StringBuffer("Hello");
+
+        // 1. append()
+        sb.append(" World");
+        System.out.println("After append: " + sb);
+
+        // 2. insert()
+        sb.insert(5, " Java");
+        System.out.println("After insert: " + sb);
+
+        // 3. reverse()
+        sb.reverse();
+        System.out.println("After reverse: " + sb);
+
+        // 4. delete()
+        sb.delete(0, 5);
+        System.out.println("After delete: " + sb);
+    }
+}
