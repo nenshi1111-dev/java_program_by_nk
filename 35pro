@@ -1,0 +1,53 @@
+// Interface
+interface Shape {
+    void area();
+}
+
+// Circle implements Shape
+class Circle implements Shape {
+
+    double radius;
+
+    // Constructor to set value
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing area()
+    public void area() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+// Rectangle implements Shape
+class Rectangle implements Shape {
+
+    double length, breadth;
+
+    // Constructor to set values
+    Rectangle(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    // Implementing area()
+    public void area() {
+        double area = length * breadth;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+// Main class
+public class ShapeDemo {
+    public static void main(String[] args) {
+
+        Shape s;
+
+        s = new Circle(5);      // constructor sets radius
+        s.area();
+
+        s = new Rectangle(4, 6); // constructor sets length & breadth
+        s.area();
+    }
+}
