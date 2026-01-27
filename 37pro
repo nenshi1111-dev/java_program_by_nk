@@ -1,0 +1,32 @@
+// Abstract parent class
+abstract class Shape {
+
+    // Abstract method
+    abstract void area();
+}
+
+// Child class Circle
+class Circle extends Shape {
+
+    double radius;
+
+    // Constructor
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementing abstract method
+    void area() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+// Main class
+public class AbstractShapeDemo {
+    public static void main(String[] args) {
+
+        Shape s = new Circle(5); // parent reference, child object
+        s.area();
+    }
+}
