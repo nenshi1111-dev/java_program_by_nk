@@ -1,0 +1,43 @@
+public class WrapperDemo {
+    public static void main(String[] args) {
+
+        // ----- Autoboxing -----
+        int a = 10;
+        Integer intObj = a;     // int → Integer
+        System.out.println("Autoboxing Integer: " + intObj);
+
+        double d = 5.5;
+        Double doubleObj = d;  // double → Double
+        System.out.println("Autoboxing Double: " + doubleObj);
+
+        char ch = 'A';
+        Character charObj = ch; // char → Character
+        System.out.println("Autoboxing Character: " + charObj);
+
+        // ----- Unboxing -----
+        Integer x = 20;
+        int x1 = x;             // Integer → int
+        System.out.println("Unboxing Integer: " + x1);
+
+        Double y = 9.8;
+        double y1 = y;          // Double → double
+        System.out.println("Unboxing Double: " + y1);
+
+        Character c = 'Z';
+        char c1 = c;            // Character → char
+        System.out.println("Unboxing Character: " + c1);
+
+        // ----- Parsing from String -----
+        String s1 = "123";
+        int num = Integer.parseInt(s1);
+        System.out.println("Parsed Integer: " + num);
+
+        String s2 = "45.67";
+        double num2 = Double.parseDouble(s2);
+        System.out.println("Parsed Double: " + num2);
+
+        String s3 = "B";
+        char ch2 = s3.charAt(0);
+        System.out.println("Parsed Character: " + ch2);
+    }
+}
