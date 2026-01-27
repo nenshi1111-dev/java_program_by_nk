@@ -1,0 +1,39 @@
+project/
+ ├─ mypackage/
+ │    └─ Person.java
+ └─ otherpackage/
+      └─ DifferentPackageDemo.java
+
+package otherpackage;
+
+import mypackage.Person;
+
+public class DifferentPackageDemo {
+    public static void main(String[] args) {
+
+        Person p = new Person("Bob", 30, "Mumbai", "India");
+
+        System.out.println("Access from different package:");
+
+        // Accessing attributes
+        System.out.println("Public Name: " + p.name);   // ✅ public accessible
+        // System.out.println(p.age);    // ❌ private not accessible
+        // System.out.println(p.city);   // ❌ protected not accessible outside package (unless subclass)
+        // System.out.println(p.country);// ❌ default not accessible outside package
+
+        p.showAge();  // ✅ accessible via public method
+    }
+}      
+
+javac mypackage/Person.java
+javac -cp . otherpackage/DifferentPackageDemo.java
+java -cp . otherpackage.DifferentPackageDemo
+
+
+project/
+ ├─ mypackage/
+ │    ├─ Person.java
+ │    └─ SamePackageDemo.java
+ └─ otherpackage/
+      └─ DifferentPackageDemo.java
+
