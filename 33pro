@@ -1,0 +1,43 @@
+// Parent class
+class Shape {
+    public void area() {
+        System.out.println("Area of shape");
+    }
+}
+
+// Child class Circle
+class Circle extends Shape {
+    double radius = 5;
+
+    // Overriding area() method
+    public void area() {
+        double area = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+// Child class Rectangle
+class Rectangle extends Shape {
+    double length = 4;
+    double breadth = 6;
+
+    // Overriding area() method
+    public void area() {
+        double area = length * breadth;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+// Main class
+public class ShapeDemo {
+    public static void main(String[] args) {
+
+        Shape s;
+
+        s = new Circle();     // Shape reference → Circle object
+        s.area();             // Calls Circle's area()
+
+        s = new Rectangle();  // Shape reference → Rectangle object
+        s.area();             // Calls Rectangle's area()
+    }
+}
