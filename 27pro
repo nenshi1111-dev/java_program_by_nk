@@ -1,0 +1,21 @@
+class Demo {
+
+    // Instance Initialization Block (IIB)
+    {
+        System.out.println("IIB: This block is executed before constructor");
+    }
+
+    // Constructor
+    Demo() {
+        System.out.println("Constructor: This is executed after IIB");
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Creating first object:");
+        Demo d1 = new Demo();
+
+        System.out.println("\nCreating second object:");
+        Demo d2 = new Demo();
+    }
+}
