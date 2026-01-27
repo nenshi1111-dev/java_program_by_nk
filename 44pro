@@ -1,0 +1,27 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class DateDemo {
+    public static void main(String[] args) {
+
+        // Create Date object (current date & time)
+        Date currentDate = new Date();
+
+        // Display current date and time
+        System.out.println("Current Date & Time: " + currentDate);
+
+        // Formatting date
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = sdf.format(currentDate);
+        System.out.println("Formatted Date & Time: " + formattedDate);
+
+        // Extract day, month, year
+        SimpleDateFormat day = new SimpleDateFormat("dd");
+        SimpleDateFormat month = new SimpleDateFormat("MM");
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+
+        System.out.println("Day: " + day.format(currentDate));
+        System.out.println("Month: " + month.format(currentDate));
+        System.out.println("Year: " + year.format(currentDate));
+    }
+}
