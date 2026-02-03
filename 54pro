@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class TryCatchDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Accept two numbers
+            System.out.print("Enter numerator: ");
+            int a = sc.nextInt();
+
+            System.out.print("Enter denominator: ");
+            int b = sc.nextInt();
+
+            // Division
+            int result = a / b;
+            System.out.println("Result: " + result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed");
+        }
+
+        System.out.println("Program continues normally...");
+    }
+}
+
+File Name
+Copy code
+
+TryCatchDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac TryCatchDemo.java
+▶️ Run Command
+Copy code
+Bash
+java TryCatchDemo
+🖥️ Sample Output 1 (Valid Input)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 2
+Result: 5
+Program continues normally...
+🖥️ Sample Output 2 (Denominator = 0)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 0
+Error: Division by zero is not allowed
+Program continues normally...
+📝 Easy Explanation
+🔹 try block
+Code that may cause an error
+🔹 catch block
+Handles the error
+Prevents program crash
+🔹 ArithmeticException
+Occurs when dividing by zero
+🔑 One-Line Exam Answer
+try–catch is used to handle runtime exceptions and prevent abnormal program termination.
