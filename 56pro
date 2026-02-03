@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class ThrowDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter a number to calculate square root: ");
+            double num = sc.nextDouble();
+
+            // Throw exception if number is negative
+            if (num < 0) {
+                throw new IllegalArgumentException("Negative number not allowed for square root");
+            }
+
+            // Calculate square root
+            double sqrt = Math.sqrt(num);
+            System.out.println("Square root of " + num + " = " + sqrt);
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        System.out.println("Program continues normally...");
+    }
+}
+
+
+
+File Name
+Copy code
+
+ThrowDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac ThrowDemo.java
+▶️ Run Command
+Copy code
+Bash
+java ThrowDemo
+🖥️ Sample Output 1 (Valid Input)
+Copy code
+
+Enter a number to calculate square root: 25
+Square root of 25.0 = 5.0
+Program continues normally...
+🖥️ Sample Output 2 (Negative Input)
+Copy code
+
+Enter a number to calculate square root: -9
+Error: Negative number not allowed for square root
+Program continues normally...
+📝 Easy Explanation
+🔹 throw
+Used to explicitly throw an exception
+🔹 catch
+Handles the thrown exception
+🔹 IllegalArgumentException
+Built-in exception used for invalid arguments
+🔑 One-Line Exam Answer
+throw is used to explicitly throw an exception when an abnormal condition occurs.
