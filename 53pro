@@ -1,0 +1,107 @@
+📦 Package & Sub-package Example in Java
+Requirement
+Package: mypackage
+Class: Calculator
+Sub-package: mypackage.advanced
+Class: ScientificCalculator
+Demonstrate usage
+📂 Folder / File Structure (VERY IMPORTANT)
+Copy code
+
+project/
+│
+├── mypackage/
+│   ├── Calculator.java
+│   └── advanced/
+│       └── ScientificCalculator.java
+│
+└── TestCalculator.java
+1️⃣ Calculator.java (Package: mypackage)
+📄 mypackage/Calculator.java
+Copy code
+Java
+package mypackage;
+
+public class Calculator {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+2️⃣ ScientificCalculator.java (Sub-package: mypackage.advanced)
+📄 mypackage/advanced/ScientificCalculator.java
+Copy code
+Java
+package mypackage.advanced;
+
+import mypackage.Calculator;
+
+public class ScientificCalculator extends Calculator {
+
+    public double square(double x) {
+        return x * x;
+    }
+
+    public double sqrt(double x) {
+        return Math.sqrt(x);
+    }
+}
+3️⃣ TestCalculator.java (Main class to demonstrate usage)
+📄 TestCalculator.java
+Copy code
+Java
+import mypackage.Calculator;
+import mypackage.advanced.ScientificCalculator;
+
+public class TestCalculator {
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+        System.out.println("Addition: " + c.add(10, 5));
+        System.out.println("Subtraction: " + c.subtract(10, 5));
+
+        ScientificCalculator sc = new ScientificCalculator();
+        System.out.println("Square: " + sc.square(4));
+        System.out.println("Square Root: " + sc.sqrt(25));
+    }
+}
+▶️ Compile Commands (Run from project folder)
+Copy code
+Bash
+javac mypackage/Calculator.java
+javac mypackage/advanced/ScientificCalculator.java
+javac TestCalculator.java
+👉 OR single command (recommended):
+Copy code
+Bash
+javac mypackage/Calculator.java mypackage/advanced/ScientificCalculator.java TestCalculator.java
+▶️ Run Command
+Copy code
+Bash
+java TestCalculator
+🖥️ Output
+Copy code
+
+Addition: 15
+Subtraction: 5
+Square: 16.0
+Square Root: 5.0
+📝 Easy Explanation
+🔹 Package
+Groups related classes
+Avoids name conflict
+🔹 Sub-package
+Package inside another package
+Written using dot (.)
+Copy code
+Java
+package mypackage.advanced;
+🔹 Inheritance
+ScientificCalculator extends Calculator
+Can use add() and subtract() methods
+🔑 One-Line Exam Answer
+A package groups related classes, and a sub-package is a package inside another package, accessed using dot notation.
