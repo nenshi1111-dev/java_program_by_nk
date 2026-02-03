@@ -1,0 +1,86 @@
+import java.util.Hashtable;
+
+
+public class HashtableDemo {
+    public static void main(String[] args) {
+
+
+        // Create Hashtable (RollNo, Name)
+        Hashtable<Integer, String> ht = new Hashtable<>();
+
+
+        // Add elements
+        ht.put(101, "Amit");
+        ht.put(102, "Neha");
+        ht.put(103, "Rahul");
+
+
+        // Display Hashtable
+        System.out.println("Student Details:");
+        System.out.println(ht);
+
+
+        // Remove an element
+        ht.remove(102);
+
+
+        // Display after removal
+        System.out.println("After removing roll no 102:");
+        System.out.println(ht);
+
+
+        // Display key-value pairs using loop
+        System.out.println("Displaying key-value pairs:");
+        for (Integer roll : ht.keySet()) {
+            System.out.println("Roll No: " + roll + ", Name: " + ht.get(roll));
+        }
+    }
+}
+
+
+
+
+📂 File Name
+Copy code
+
+
+HashtableDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac HashtableDemo.java
+▶️ Run Command
+Copy code
+Bash
+java HashtableDemo
+🖥️ Sample Output
+Copy code
+
+
+Student Details:
+{101=Amit, 102=Neha, 103=Rahul}
+After removing roll no 102:
+{101=Amit, 103=Rahul}
+Displaying key-value pairs:
+Roll No: 101, Name: Amit
+Roll No: 103, Name: Rahul
+📝 Easy Explanation
+🔹 Hashtable
+Stores key–value pairs
+Keys and values cannot be null
+It is synchronized (thread-safe)
+🔹 Methods Used
+Method
+Purpose
+put()
+Add key-value pair
+remove()
+Remove entry
+keySet()
+Get all keys
+get()
+Get value using key
+🔑 Exam Points
+Package: java.util
+No duplicate keys allowed
+Used in student records, login systems
