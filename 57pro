@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+class Calculator {
+
+    // Method declares that it may throw ArithmeticException
+    public int divide(int a, int b) throws ArithmeticException {
+        return a / b; // Will throw ArithmeticException if b = 0
+    }
+}
+
+public class ThrowsDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Calculator calc = new Calculator();
+
+        System.out.print("Enter numerator: ");
+        int num = sc.nextInt();
+
+        System.out.print("Enter denominator: ");
+        int den = sc.nextInt();
+
+        try {
+            int result = calc.divide(num, den);
+            System.out.println("Result: " + result);
+        } 
+        catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed.");
+        }
+
+        System.out.println("Program continues normally...");
+    }
+}
+
+📂 File Name
+Copy code
+
+ThrowsDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac ThrowsDemo.java
+▶️ Run Command
+Copy code
+Bash
+java ThrowsDemo
+🖥️ Sample Output 1 (Valid Input)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 2
+Result: 5
+Program continues normally...
+🖥️ Sample Output 2 (Denominator = 0)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 0
+Error: Division by zero is not allowed.
+Program continues normally...
+📝 Easy Explanation
+🔹 throws
+Declares that a method may throw an exception
+Does not handle it inside the method
+🔹 try-catch
+Handles the exception where method is called
+🔹 ArithmeticException
+Automatically thrown when dividing by zero
+🔑 One-Line Exam Answer
+throws declares the exceptions a method might throw, letting the caller handle them.
