@@ -1,0 +1,71 @@
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class QueueDemo {
+    public static void main(String[] args) {
+
+        // Create Queue using LinkedList
+        Queue<Integer> queue = new LinkedList<>();
+
+        // Add elements to queue
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+
+        // Display queue
+        System.out.println("Queue elements: " + queue);
+
+        // Remove element (FIFO)
+        int removed = queue.remove();
+        System.out.println("Removed element: " + removed);
+
+        // Display queue after removal
+        System.out.println("Queue after removal: " + queue);
+
+        // Display elements using loop
+        System.out.println("Displaying queue elements:");
+        for (int num : queue) {
+            System.out.println(num);
+        }
+    }
+}
+
+
+📂 File Name
+Copy code
+
+QueueDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac QueueDemo.java
+▶️ Run Command
+Copy code
+Bash
+java QueueDemo
+🖥️ Output
+Copy code
+
+Queue elements: [10, 20, 30]
+Removed element: 10
+Queue after removal: [20, 30]
+Displaying queue elements:
+20
+30
+📝 Easy Explanation
+🔹 Queue (FIFO)
+First In First Out
+First inserted element is removed first
+🔹 Methods Used
+Method
+Work
+add()
+Insert element
+remove()
+Remove front element
+Loop
+Display elements
+🔑 Exam Points
+Queue is an interface
+LinkedList implements Queue
+Used in task scheduling, printer queue
