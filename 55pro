@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class FinallyDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            // Accept two numbers
+            System.out.print("Enter numerator: ");
+            int a = sc.nextInt();
+
+            System.out.print("Enter denominator: ");
+            int b = sc.nextInt();
+
+            // Division
+            int result = a / b;
+            System.out.println("Result: " + result);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed");
+        }
+        finally {
+            System.out.println("This is the finally block. It always executes.");
+        }
+
+        System.out.println("Program continues normally...");
+    }
+}
+
+📂 File Name
+Copy code
+
+FinallyDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac FinallyDemo.java
+▶️ Run Command
+Copy code
+Bash
+java FinallyDemo
+🖥️ Sample Output 1 (Valid Input)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 2
+Result: 5
+This is the finally block. It always executes.
+Program continues normally...
+🖥️ Sample Output 2 (Denominator = 0)
+Copy code
+
+Enter numerator: 10
+Enter denominator: 0
+Error: Division by zero is not allowed
+This is the finally block. It always executes.
+Program continues normally...
+📝 Easy Explanation
+🔹 try
+Code that may cause an exception
+🔹 catch
+Handles specific exception
+🔹 finally
+Always executes regardless of exception
+Useful for closing resources (e.g., Scanner, file, database connection)
+🔑 One-Line Exam Answer
+The finally block executes always, even if an exception occurs or is handled, ensuring cleanup or final statements run.
