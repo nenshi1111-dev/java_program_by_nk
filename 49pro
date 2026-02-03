@@ -1,0 +1,67 @@
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class TreeSetDemo {
+    public static void main(String[] args) {
+
+        // Create SortedSet using TreeSet
+        SortedSet<Integer> set = new TreeSet<>();
+
+        // Add elements (including duplicates)
+        set.add(50);
+        set.add(10);
+        set.add(30);
+        set.add(20);
+        set.add(10); // duplicate
+        set.add(40);
+
+        // Display elements
+        System.out.println("SortedSet elements (Ascending Order):");
+        for (Integer num : set) {
+            System.out.println(num);
+        }
+    }
+}
+
+📂 File Name
+Copy code
+
+TreeSetDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac TreeSetDemo.java
+▶️ Run Command
+Copy code
+Bash
+java TreeSetDemo
+🖥️ Output
+Copy code
+
+SortedSet elements (Ascending Order):
+10
+20
+30
+40
+50
+📝 Easy Explanation
+🔹 SortedSet / TreeSet
+TreeSet automatically sorts elements
+Stores elements in ascending order
+Duplicates are not allowed
+Uses Red-Black Tree internally
+🔹 Important Points
+Feature
+TreeSet
+Order
+Sorted (Ascending)
+Duplicates
+❌ Not allowed
+Null values
+❌ Not allowed
+Package
+java.util
+🔑 Exam Notes
+TreeSet implements SortedSet
+Sorting happens automatically
+Useful when unique + sorted data is required
