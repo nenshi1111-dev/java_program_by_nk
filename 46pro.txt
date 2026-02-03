@@ -1,0 +1,87 @@
+import java.util.Vector;
+
+
+public class VectorDemo {
+    public static void main(String[] args) {
+
+
+        // Create Vector with initial capacity 2
+        Vector<Integer> v = new Vector<>(2);
+
+
+        // Display initial capacity
+        System.out.println("Initial Capacity: " + v.capacity());
+
+
+        // Add elements
+        v.add(10);
+        v.add(20);
+        System.out.println("Vector elements: " + v);
+        System.out.println("Capacity after adding 2 elements: " + v.capacity());
+
+
+        // Adding more elements (dynamic resizing)
+        v.add(30);
+        v.add(40);
+        System.out.println("Vector after adding more elements: " + v);
+        System.out.println("Capacity after resizing: " + v.capacity());
+
+
+        // Remove an element
+        v.remove(1); // removes element at index 1
+        System.out.println("After removing element at index 1: " + v);
+
+
+        // Display elements using loop
+        System.out.println("Displaying elements:");
+        for (int num : v) {
+            System.out.println(num);
+        }
+    }
+}
+
+
+
+
+
+
+File Name
+Copy code
+
+
+VectorDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac VectorDemo.java
+▶️ Run Command
+Copy code
+Bash
+java VectorDemo
+🖥️ Sample Output
+Copy code
+
+
+Initial Capacity: 2
+Vector elements: [10, 20]
+Capacity after adding 2 elements: 2
+Vector after adding more elements: [10, 20, 30, 40]
+Capacity after resizing: 4
+After removing element at index 1: [10, 30, 40]
+Displaying elements:
+10
+30
+40
+📝 Easy Explanation
+🔹 Vector
+Vector is a dynamic array
+It grows automatically when capacity is full
+It is synchronized (thread-safe)
+🔹 Dynamic Resizing
+Initial capacity = 2
+When exceeded → capacity becomes double (2 → 4)
+🔑 Exam Points
+Vector is in java.util
+Allows duplicate values
+Maintains insertion order
+Methods: add(), remove(), capacity()
