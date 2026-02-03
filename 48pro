@@ -1,0 +1,79 @@
+import java.util.LinkedList;
+
+public class LinkedListDemo {
+    public static void main(String[] args) {
+
+        // Create LinkedList of Strings
+        LinkedList<String> list = new LinkedList<>();
+
+        // Add elements
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Mango");
+
+        // Insert element at specific position
+        list.add(1, "Orange");
+
+        // Display LinkedList
+        System.out.println("LinkedList elements:");
+        for (String fruit : list) {
+            System.out.println(fruit);
+        }
+
+        // Remove an element
+        list.remove("Banana");
+
+        // Display after removal
+        System.out.println("\nAfter removing Banana:");
+        for (String fruit : list) {
+            System.out.println(fruit);
+        }
+    }
+}
+
+
+📂 File Name
+Copy code
+
+LinkedListDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac LinkedListDemo.java
+▶️ Run Command
+Copy code
+Bash
+java LinkedListDemo
+🖥️ Output
+Copy code
+
+LinkedList elements:
+Apple
+Orange
+Banana
+Mango
+
+After removing Banana:
+Apple
+Orange
+Mango
+📝 Easy Explanation
+🔹 LinkedList
+Stores elements as nodes
+Allows easy insertion and deletion
+Maintains insertion order
+🔹 Methods Used
+Method
+Work
+add()
+Add element
+add(index, value)
+Insert at position
+remove()
+Remove element
+Loop
+Display elements
+🔑 Exam Points
+Package: java.util
+Allows duplicate values
+Slower access but faster insert/delete than ArrayList
