@@ -1,0 +1,79 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+
+        // Create HashMap (StudentID, Marks)
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        // Add elements
+        map.put(101, 85);
+        map.put(102, 90);
+        map.put(103, 78);
+
+        // Display HashMap
+        System.out.println("Student Marks:");
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println("ID: " + entry.getKey() + ", Marks: " + entry.getValue());
+        }
+
+        // Update marks of student 102
+        map.put(102, 95);
+
+        // Remove student 103
+        map.remove(103);
+
+        // Display after update and remove
+        System.out.println("\nAfter update and remove:");
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println("ID: " + entry.getKey() + ", Marks: " + entry.getValue());
+        }
+    }
+}
+
+
+📂 File Name
+Copy code
+
+HashMapDemo.java
+▶️ Compile Command
+Copy code
+Bash
+javac HashMapDemo.java
+▶️ Run Command
+Copy code
+Bash
+java HashMapDemo
+🖥️ Sample Output
+Copy code
+
+Student Marks:
+ID: 101, Marks: 85
+ID: 102, Marks: 90
+ID: 103, Marks: 78
+
+After update and remove:
+ID: 101, Marks: 85
+ID: 102, Marks: 95
+📝 Easy Explanation
+🔹 HashMap
+Stores key–value pairs
+Keys are unique
+Order is not guaranteed
+Allows one null key and multiple null values
+🔹 Operations Used
+Operation
+Method
+Add
+put()
+Update
+put() (same key)
+Remove
+remove()
+Display
+entrySet()
+🔑 Exam Points
+Package: java.util
+Fast lookup using keys
+Used in student records, dictionaries
